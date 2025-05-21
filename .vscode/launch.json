@@ -6,11 +6,12 @@
   "configurations": [
     {
       "type": "node",
-      "request": "launch",
-      "name": "Start",
-      "runtimeExecutable": "nodemon",
-      "program": "${workspaceFolder}/dist/index.js",
+      "request": "attach",
+      "name": "Attach to nodemon",
+      "port": 9229,
       "restart": true,
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
       "internalConsoleOptions": "neverOpen"
     }
   ]

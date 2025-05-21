@@ -2,8 +2,8 @@
   "name": "start-new-project",
   "packageManager": "yarn@4.6.0",
   "scripts": {
-    "watch": "tsc -w",
-    "dev": "nodemon --inspect dist/index.js"
+    "tsc:watch": "tsc -w",
+    "start:dev": "nodemon --inspect dist/index.js"
   },
   "dependencies": {
     "express": "^5.1.0"
