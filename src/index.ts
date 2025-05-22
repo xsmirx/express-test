@@ -40,11 +40,23 @@ app.post('/products', (req, res) => {
   products.push(newProduct)
   res.status(201).send(newProduct)
 })
+app.put('/products/:id', (req, res) => {
+  const product = products.find((product) => product.id === +req.params.id)
+  if (!product) {
+    res.status(404).send()
+  } else {
+    const title = req.body.title
+    if (title) {
+      product.title = req.body.title
+    }
+    res.status(202).send(product)
+  }
+})
 app.delete('/products/:id', (req, res) => {
   for (let i = 0; i < products.length; i++) {
     if (products[i].id === +req.params.id) {
       products.splice(i, 1)
-      res.status(204).send()
+      res.status(200).send()
       break
     }
   }
